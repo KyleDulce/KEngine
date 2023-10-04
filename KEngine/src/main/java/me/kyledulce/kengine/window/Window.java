@@ -1,9 +1,9 @@
-package me.kyledulce.randomgame.window;
+package me.kyledulce.kengine.window;
 
 import jakarta.inject.Inject;
 import jakarta.inject.Singleton;
-import me.kyledulce.randomgame.config.Config;
-import me.kyledulce.randomgame.exception.WindowInitializeFailure;
+import me.kyledulce.kengine.config.Config;
+import me.kyledulce.kengine.exception.WindowInitializeFailure;
 import org.lwjgl.glfw.GLFW;
 import org.lwjgl.glfw.GLFWVidMode;
 import org.lwjgl.opengl.GL;

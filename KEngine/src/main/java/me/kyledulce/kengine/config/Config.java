@@ -1,4 +1,4 @@
-package me.kyledulce.randomgame.config;
+package me.kyledulce.kengine.config;
 
 import ch.qos.logback.classic.Level;
 import jakarta.inject.Singleton;

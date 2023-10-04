@@ -1,10 +1,10 @@
-package me.kyledulce.randomgame.game;
+package me.kyledulce.kengine.game;
 
 import ch.qos.logback.classic.Level;
 import jakarta.inject.Inject;
 import jakarta.inject.Singleton;
-import me.kyledulce.randomgame.config.Config;
-import me.kyledulce.randomgame.window.Window;
+import me.kyledulce.kengine.config.Config;
+import me.kyledulce.kengine.window.Window;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

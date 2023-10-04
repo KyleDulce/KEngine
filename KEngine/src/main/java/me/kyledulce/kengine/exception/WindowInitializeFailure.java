@@ -1,4 +1,4 @@
-package me.kyledulce.randomgame.exception;
+package me.kyledulce.kengine.exception;
 
 public class WindowInitializeFailure extends RuntimeException {
     public WindowInitializeFailure() {}
