@@ -18,7 +18,11 @@
         <commons.configuration.version>2.9.0</commons.configuration.version>
         <commons.lang.version>3.13.0</commons.lang.version>
         <commons.text.version>1.10.0</commons.text.version>
+        <commons.beanutils.version>1.9.4</commons.beanutils.version>
         <annotations.version>24.0.1</annotations.version>
+        <avaje-inject.version>9.5</avaje-inject.version>
+        <logback.version>1.4.11</logback.version>
+        <slf4j.version>2.0.9</slf4j.version>
 
         <mockito.version>5.5.0</mockito.version>
         <junit.version>5.10.0</junit.version>
@@ -193,9 +197,41 @@
             <version>${commons.text.version}</version>
         </dependency>
         <dependency>
+            <groupId>commons-beanutils</groupId>
+            <artifactId>commons-beanutils</artifactId>
+            <version>${commons.beanutils.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.avaje</groupId>
+            <artifactId>avaje-inject</artifactId>
+            <version>${avaje-inject.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.avaje</groupId>
+            <artifactId>avaje-inject-generator</artifactId>
+            <version>${avaje-inject.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
             <groupId>org.jetbrains</groupId>
             <artifactId>annotations</artifactId>
             <version>${annotations.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-core</artifactId>
+            <version>${logback.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>${logback.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.version}</version>
         </dependency>
 
         <dependency>
@@ -221,6 +257,11 @@
             <artifactId>junit-jupiter-params</artifactId>
             <version>${junit.version}</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.avaje</groupId>
+            <artifactId>avaje-inject-test</artifactId>
+            <version>${avaje-inject.version}</version>
         </dependency>
     </dependencies>
 </project>

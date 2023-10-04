@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<configuration>
+    <logging>
+        <level>INFO</level>
+    </logging>
+    <window>
+        <title>Random Game</title>
+        <resizable>true</resizable>
+        <maximized>true</maximized>
+    </window>
+</configuration>
