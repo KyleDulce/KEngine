@@ -2,7 +2,8 @@ package me.kyledulce.kengine.config;
 
 import ch.qos.logback.classic.Level;
 import jakarta.inject.Singleton;
-import org.apache.commons.configuration2.XMLConfiguration;
+import org.apache.commons.configuration2.AbstractConfiguration;
+import org.apache.commons.configuration2.CompositeConfiguration;
 import org.apache.commons.configuration2.builder.fluent.Configurations;
 import org.apache.commons.configuration2.ex.ConfigurationException;
 
@@ -11,13 +12,15 @@ import java.util.Iterator;
 @Singleton
 public class Config {
 
-    private XMLConfiguration config;
+    private final AbstractConfiguration config;
 
     public Config() {
-        Configurations configs = new Configurations();
+        CompositeConfiguration config = new CompositeConfiguration();
+        this.config = config;
 
         try {
-            this.config = configs.xml("config.xml");
+            config.addConfiguration(new Configurations().xml("config.xml"));
+            config.addConfiguration(new Configurations().xml("defaultconfig.xml"));
         } catch (ConfigurationException e) {
             e.printStackTrace();
         }
@@ -51,5 +54,17 @@ public class Config {
 
     public String getTitle() {
         return config.getString("window.title");
+    }
+
+    public int getMaxPoolThreads() {
+        try {
+            return Integer.parseInt(config.getString("resources.threadPool.maxThreads"));
+        } catch (NumberFormatException e) {
+            return Runtime.getRuntime().availableProcessors();
+        }
+    }
+
+    public int getThreadTimeoutSeconds() {
+        return config.getInteger("resources.threadPool.threadTimeoutSeconds", 60);
     }
 }

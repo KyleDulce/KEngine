@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<configuration>
+    <logging>
+        <level>DEBUG</level>
+    </logging>
+    <window>
+        <title>Unnamed Game</title>
+        <resizable>true</resizable>
+        <maximized>true</maximized>
+    </window>
+    <resources>
+        <threadPool>
+            <maxThreads>SYSTEM</maxThreads>
+            <threadTimeoutSeconds>60</threadTimeoutSeconds>
+        </threadPool>
+
+    </resources>
+</configuration>

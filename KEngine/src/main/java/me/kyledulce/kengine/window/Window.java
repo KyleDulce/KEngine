@@ -30,11 +30,14 @@ public class Window {
         // Display on primary monitor
         GLFWVidMode vidMode = GLFW.glfwGetVideoMode(GLFW.glfwGetPrimaryMonitor());
 
+        GLFW.glfwDefaultWindowHints();
+        GLFW.glfwWindowHint(GLFW.GLFW_VISIBLE, GLFW.GLFW_FALSE);
         GLFW.glfwWindowHint(GLFW.GLFW_RESIZABLE, config.getResizable() ? GLFW.GLFW_TRUE : GLFW.GLFW_FALSE);
         GLFW.glfwWindowHint(GLFW.GLFW_MAXIMIZED, config.getMaximized() ? GLFW.GLFW_TRUE : GLFW.GLFW_FALSE);
 
+
         // Create Window
-        windowId = GLFW.glfwCreateWindow(vidMode.width(), vidMode.height(), config.getTitle(), GLFW.glfwGetPrimaryMonitor(), NULL);
+        windowId = GLFW.glfwCreateWindow(vidMode.width(), vidMode.height(), config.getTitle(), NULL, NULL);
 
         if(windowId == NULL) {
             throw new WindowInitializeFailure("Failed to create window");

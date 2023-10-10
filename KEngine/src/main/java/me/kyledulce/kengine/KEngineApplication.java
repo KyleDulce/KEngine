@@ -3,9 +3,9 @@ package me.kyledulce.kengine;
 import io.avaje.inject.BeanScope;
 import me.kyledulce.kengine.game.GameController;
 
-public class RandomGame {
+public class KEngineApplication {
 
-    public static void main(String[] args) {
+    public static void run() {
         BeanScope beanScope = BeanScope.builder().build();
 
         GameController application = beanScope.get(GameController.class);

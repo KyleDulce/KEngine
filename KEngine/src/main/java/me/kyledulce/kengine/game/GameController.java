@@ -12,13 +12,15 @@ import org.slf4j.LoggerFactory;
 public class GameController implements Runnable {
     private static final Logger LOGGER = LoggerFactory.getLogger(GameController.class);
 
-    private Config config;
-    private Window window;
+    private final Config config;
+    private final Window window;
+    private final GameTime gameTime;
 
     @Inject
-    public GameController(Config config, Window window) {
+    public GameController(Config config, Window window, GameTime gameTime) {
         this.config = config;
         this.window = window;
+        this.gameTime = gameTime;
     }
 
     public void run() {
@@ -36,12 +38,16 @@ public class GameController implements Runnable {
         LOGGER.info("Logging Level is {}", logLevel.toString());
         LOGGER.info("Config: \n{}", config.getAllConfig());
 
+        gameTime.setStartTime();
+
         // Setup window
         window.initializeWindow();
     }
 
     private void gameLoop() {
-
+        while (true) {
+            System.out.println("test");
+        }
     }
 
     private void shutdown() {
