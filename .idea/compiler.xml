@@ -7,8 +7,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="KEngine" />
-        <module name="Game" />
+        <module name="KEngine-standard-assets" />
+        <module name="KEngine-core" />
+        <module name="KEngine-sample" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

@@ -3,16 +3,17 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>random-game</artifactId>
+        <artifactId>KEngine</artifactId>
         <groupId>me.kyledulce</groupId>
-        <version>1.0-SNAPSHOT</version>
+        <version>0.0.1</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>Game</artifactId>
+    <artifactId>KEngine-standard-assets</artifactId>
+    <version>0.0.1</version>
 
     <properties>
-        <KEngine.version>1.0-SNAPSHOT</KEngine.version>
+        <KEngine.version>0.0.1</KEngine.version>
     </properties>
 
     <dependencies>
@@ -22,4 +23,5 @@
             <version>${KEngine.version}</version>
         </dependency>
     </dependencies>
+
 </project>

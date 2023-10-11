@@ -5,9 +5,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>me.kyledulce</groupId>
-    <artifactId>random-game</artifactId>
+    <artifactId>KEngine</artifactId>
     <packaging>pom</packaging>
-    <version>1.0-SNAPSHOT</version>
+    <version>0.0.1</version>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -17,8 +17,9 @@
     </properties>
 
     <modules>
-        <module>KEngine</module>
-        <module>Game</module>
+        <module>KEngine-core</module>
+        <module>KEngine-sample</module>
+        <module>KEngine-standard-assets</module>
     </modules>
 
     <dependencies>
