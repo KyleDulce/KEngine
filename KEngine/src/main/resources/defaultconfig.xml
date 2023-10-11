@@ -13,6 +13,5 @@
             <maxThreads>SYSTEM</maxThreads>
             <threadTimeoutSeconds>60</threadTimeoutSeconds>
         </threadPool>
-
     </resources>
 </configuration>

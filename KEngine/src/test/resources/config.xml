@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<configuration>
+    <logging>
+        <level>ALL</level>
+    </logging>
+    <window>
+        <title>Unit Test</title>
+        <resizable>true</resizable>
+        <maximized>true</maximized>
+    </window>
+</configuration>

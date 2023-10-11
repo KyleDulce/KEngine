@@ -46,6 +46,7 @@ public class GameAssetManager implements AssetManager {
                 return (GameAssetFactory<T>) factory;
             }
         }
+        LOGGER.error("Factory for type {} not found", type);
         return null;
     }
 
@@ -58,11 +59,18 @@ public class GameAssetManager implements AssetManager {
      */
     @SuppressWarnings("unchecked cast")
     private <T extends GameAsset> Optional<T> loadResource(String resourcePath, GameAssetFactory<T> gameAssetFactory) {
+        if(gameAssetFactory == null) {
+            LOGGER.error("Factory not found");
+            return Optional.empty();
+        }
+
         if(loadedResources.containsKey(resourcePath)) {
             GameAsset resource = loadedResources.get(resourcePath);
             if(gameAssetFactory.isResourceInstanceOfType(resource)) {
+                LOGGER.warn("Attempted to load resource that is already loaded");
                 return Optional.of((T) resource);
             } else {
+                LOGGER.error("Attempted to load already loaded resource as a different type");
                 return Optional.empty();
             }
         }
@@ -81,6 +89,7 @@ public class GameAssetManager implements AssetManager {
         Optional<T> resource = gameAssetFactory.readResource(resourceInputStream);
 
         if(resource.isEmpty()) {
+            LOGGER.error("Failed to load resource {} at {}", resourcePath, normalizedResourcePath);
             return Optional.empty();
         }
 
