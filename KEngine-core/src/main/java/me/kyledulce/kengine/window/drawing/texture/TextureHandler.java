@@ -3,8 +3,10 @@ package me.kyledulce.kengine.window.drawing.texture;
 import me.kyledulce.kengine.annotations.AssetFactory;
 import me.kyledulce.kengine.resource.GameAsset;
 import me.kyledulce.kengine.resource.GameAssetFactory;
+import org.jetbrains.annotations.NotNull;
 import org.lwjgl.BufferUtils;
 import org.lwjgl.opengl.GL11;
+import org.lwjgl.opengl.GL13;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -82,6 +84,7 @@ public class TextureHandler implements GameAssetFactory<TextureAsset> {
         texture.setId(GL11.glGenTextures());
         GL11.glBindTexture(GL11.GL_TEXTURE_2D, texture.getId());
         GL11.glTexParameterf(GL11.GL_TEXTURE_2D, GL11.GL_TEXTURE_MIN_FILTER, GL11.GL_NEAREST);
+        GL11.glTexParameterf(GL11.GL_TEXTURE_2D, GL11.GL_TEXTURE_MAG_FILTER, GL11.GL_NEAREST);
         GL11.glTexImage2D(GL11.GL_TEXTURE_2D, 0, GL11.GL_RGBA, texture.getWidth(), texture.getHeight(), 0, GL11.GL_RGBA, GL11.GL_UNSIGNED_BYTE, texture.getImgBuffer());
     }
 
@@ -95,5 +98,15 @@ public class TextureHandler implements GameAssetFactory<TextureAsset> {
             GL11.glDeleteTextures(texture.getId());
             texture.setId(0);
         }
+    }
+
+    public void bindTexture(@NotNull TextureAsset texture) {
+        GL13.glActiveTexture(GL13.GL_TEXTURE0);
+        GL13.glBindTexture(GL11.GL_TEXTURE_2D, texture.getId());
+    }
+
+    public void clearBind() {
+        GL13.glActiveTexture(GL13.GL_TEXTURE0);
+        GL13.glBindTexture(GL11.GL_TEXTURE_2D, 0);
     }
 }
