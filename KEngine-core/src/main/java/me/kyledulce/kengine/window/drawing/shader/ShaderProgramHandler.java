@@ -40,6 +40,7 @@ public class ShaderProgramHandler {
 
         for(int x = 0; x < SHADER_ATTRIBUTES.length; x++) {
             GL20.glBindAttribLocation(programId, x, SHADER_ATTRIBUTES[x]);
+            program.getAttributeToIndex().put(SHADER_ATTRIBUTES[x], x);
         }
 
         GL20.glLinkProgram(programId);
@@ -88,5 +89,9 @@ public class ShaderProgramHandler {
 
     public void clearBind() {
         GL20.glUseProgram(0);
+    }
+
+    public void render(ShaderProgram shaderProgram) {
+
     }
 }

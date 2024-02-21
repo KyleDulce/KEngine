@@ -4,12 +4,15 @@ import lombok.Getter;
 import static org.lwjgl.opengl.GL20.*;
 
 public enum ShaderType {
-    VERTEX(GL_VERTEX_SHADER),
-    FRAGMENT(GL_FRAGMENT_SHADER);
+    VERTEX(GL_VERTEX_SHADER, "vertices"),
+    FRAGMENT(GL_FRAGMENT_SHADER, "textures");
 
     @Getter
     private final int shaderTypeId;
-    ShaderType(int shaderTypeId) {
+    @Getter
+    private final String attribLocationName;
+    ShaderType(int shaderTypeId, String attribLocationName) {
         this.shaderTypeId = shaderTypeId;
+        this.attribLocationName = attribLocationName;
     }
 }

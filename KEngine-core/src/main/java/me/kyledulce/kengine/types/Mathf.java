@@ -1,4 +1,4 @@
-package me.kyledulce.kengine.math;
+package me.kyledulce.kengine.types;
 
 import org.jetbrains.annotations.Contract;
 

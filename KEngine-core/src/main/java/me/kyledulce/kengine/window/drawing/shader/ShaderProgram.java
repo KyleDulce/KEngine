@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
+import java.util.HashMap;
+
 @Getter
 @RequiredArgsConstructor
 public class ShaderProgram {
@@ -12,4 +14,6 @@ public class ShaderProgram {
 
     @Setter(AccessLevel.PACKAGE)
     private int programId = 0;
+
+    private final HashMap<String, Integer> attributeToIndex = new HashMap<>();
 }
